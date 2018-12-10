@@ -7,13 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8416C80621BE3B9D00ED317D /* com_jinher_SelfRectification.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C80421BE3B9D00ED317D /* com_jinher_SelfRectification.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */; };
+		8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */; };
+		8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */; };
+		8416C82121BE3E4F00ED317D /* SelfRectification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8416C80121BE3B9D00ED317D /* com_jinher_SelfRectification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = com_jinher_SelfRectification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8416C80421BE3B9D00ED317D /* com_jinher_SelfRectification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = com_jinher_SelfRectification.h; sourceTree = "<group>"; };
-		8416C80521BE3B9D00ED317D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8416C80121BE3B9D00ED317D /* jinher_app_SelfRectification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = jinher_app_SelfRectification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jinher_app_SelfRectification.h; sourceTree = "<group>"; };
+		8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfRectificationController.m; sourceTree = "<group>"; };
+		8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfRectificationController.h; sourceTree = "<group>"; };
+		8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelfRectification.storyboard; sourceTree = "<group>"; };
+		8416C81D21BE3E4F00ED317D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,7 +36,7 @@
 		8416C7F721BE3B9D00ED317D = {
 			isa = PBXGroup;
 			children = (
-				8416C80321BE3B9D00ED317D /* com.jinher.SelfRectification */,
+				8416C81821BE3E4F00ED317D /* jinher.app.SelfRectification */,
 				8416C80221BE3B9D00ED317D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -38,18 +44,21 @@
 		8416C80221BE3B9D00ED317D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8416C80121BE3B9D00ED317D /* com_jinher_SelfRectification.framework */,
+				8416C80121BE3B9D00ED317D /* jinher_app_SelfRectification.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		8416C80321BE3B9D00ED317D /* com.jinher.SelfRectification */ = {
+		8416C81821BE3E4F00ED317D /* jinher.app.SelfRectification */ = {
 			isa = PBXGroup;
 			children = (
-				8416C80421BE3B9D00ED317D /* com_jinher_SelfRectification.h */,
-				8416C80521BE3B9D00ED317D /* Info.plist */,
+				8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */,
+				8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */,
+				8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */,
+				8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */,
+				8416C81D21BE3E4F00ED317D /* Info.plist */,
 			);
-			path = com.jinher.SelfRectification;
+			path = jinher.app.SelfRectification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -59,16 +68,17 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8416C80621BE3B9D00ED317D /* com_jinher_SelfRectification.h in Headers */,
+				8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */,
+				8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8416C80021BE3B9D00ED317D /* com.jinher.SelfRectification */ = {
+		8416C80021BE3B9D00ED317D /* jinher.app.SelfRectification */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8416C80921BE3B9D00ED317D /* Build configuration list for PBXNativeTarget "com.jinher.SelfRectification" */;
+			buildConfigurationList = 8416C80921BE3B9D00ED317D /* Build configuration list for PBXNativeTarget "jinher.app.SelfRectification" */;
 			buildPhases = (
 				8416C7FC21BE3B9D00ED317D /* Headers */,
 				8416C7FD21BE3B9D00ED317D /* Sources */,
@@ -79,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = com.jinher.SelfRectification;
+			name = jinher.app.SelfRectification;
 			productName = com.jinher.SelfRectification;
-			productReference = 8416C80121BE3B9D00ED317D /* com_jinher_SelfRectification.framework */;
+			productReference = 8416C80121BE3B9D00ED317D /* jinher_app_SelfRectification.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -98,7 +108,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 8416C7FB21BE3B9D00ED317D /* Build configuration list for PBXProject "com.jinher.SelfRectification" */;
+			buildConfigurationList = 8416C7FB21BE3B9D00ED317D /* Build configuration list for PBXProject "jinher.app.SelfRectification" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -110,7 +120,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8416C80021BE3B9D00ED317D /* com.jinher.SelfRectification */,
+				8416C80021BE3B9D00ED317D /* jinher.app.SelfRectification */,
 			);
 		};
 /* End PBXProject section */
@@ -120,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8416C82121BE3E4F00ED317D /* SelfRectification.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,14 +276,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = com.jinher.SelfRectification/Info.plist;
+				INFOPLIST_FILE = jinher.app.SelfRectification/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hsg.com.com-jinher-SelfRectification";
+				PRODUCT_BUNDLE_IDENTIFIER = jinher.app.SelfRectification;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -288,14 +300,14 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = com.jinher.SelfRectification/Info.plist;
+				INFOPLIST_FILE = jinher.app.SelfRectification/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "hsg.com.com-jinher-SelfRectification";
+				PRODUCT_BUNDLE_IDENTIFIER = jinher.app.SelfRectification;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8416C7FB21BE3B9D00ED317D /* Build configuration list for PBXProject "com.jinher.SelfRectification" */ = {
+		8416C7FB21BE3B9D00ED317D /* Build configuration list for PBXProject "jinher.app.SelfRectification" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8416C80721BE3B9D00ED317D /* Debug */,
@@ -314,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		8416C80921BE3B9D00ED317D /* Build configuration list for PBXNativeTarget "com.jinher.SelfRectification" */ = {
+		8416C80921BE3B9D00ED317D /* Build configuration list for PBXNativeTarget "jinher.app.SelfRectification" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8416C80A21BE3B9D00ED317D /* Debug */,
