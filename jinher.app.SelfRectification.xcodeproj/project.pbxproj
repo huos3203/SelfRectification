@@ -11,6 +11,17 @@
 		8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */; };
 		8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */; };
 		8416C82121BE3E4F00ED317D /* SelfRectification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */; };
+		84F16ADE21C2710200664722 /* shengyinnn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD521C2710200664722 /* shengyinnn@2x.png */; };
+		84F16ADF21C2710200664722 /* pzxxxx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD621C2710200664722 /* pzxxxx@2x.png */; };
+		84F16AE021C2710200664722 /* zhzhaooo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD721C2710200664722 /* zhzhaooo.png */; };
+		84F16AE121C2710200664722 /* pzxxxx@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD821C2710200664722 /* pzxxxx@3x.png */; };
+		84F16AE221C2710300664722 /* zhzhaooo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD921C2710200664722 /* zhzhaooo@2x.png */; };
+		84F16AE321C2710300664722 /* zhzhaooo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16ADA21C2710200664722 /* zhzhaooo@3x.png */; };
+		84F16AE421C2710300664722 /* shengyinnn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16ADB21C2710200664722 /* shengyinnn@3x.png */; };
+		84F16AE521C2710300664722 /* shengyinnn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16ADC21C2710200664722 /* shengyinnn.png */; };
+		84F16AE621C2710300664722 /* pzxxxx.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16ADD21C2710200664722 /* pzxxxx.png */; };
+		84F16AEA21C2782B00664722 /* RectiCollCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F16AE821C2782B00664722 /* RectiCollCell.h */; };
+		84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F16AE921C2782B00664722 /* RectiCollCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +31,17 @@
 		8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfRectificationController.h; sourceTree = "<group>"; };
 		8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelfRectification.storyboard; sourceTree = "<group>"; };
 		8416C81D21BE3E4F00ED317D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84F16AD521C2710200664722 /* shengyinnn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shengyinnn@2x.png"; sourceTree = "<group>"; };
+		84F16AD621C2710200664722 /* pzxxxx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pzxxxx@2x.png"; sourceTree = "<group>"; };
+		84F16AD721C2710200664722 /* zhzhaooo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhzhaooo.png; sourceTree = "<group>"; };
+		84F16AD821C2710200664722 /* pzxxxx@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pzxxxx@3x.png"; sourceTree = "<group>"; };
+		84F16AD921C2710200664722 /* zhzhaooo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhzhaooo@2x.png"; sourceTree = "<group>"; };
+		84F16ADA21C2710200664722 /* zhzhaooo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhzhaooo@3x.png"; sourceTree = "<group>"; };
+		84F16ADB21C2710200664722 /* shengyinnn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shengyinnn@3x.png"; sourceTree = "<group>"; };
+		84F16ADC21C2710200664722 /* shengyinnn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shengyinnn.png; sourceTree = "<group>"; };
+		84F16ADD21C2710200664722 /* pzxxxx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pzxxxx.png; sourceTree = "<group>"; };
+		84F16AE821C2782B00664722 /* RectiCollCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RectiCollCell.h; sourceTree = "<group>"; };
+		84F16AE921C2782B00664722 /* RectiCollCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RectiCollCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +74,40 @@
 		8416C81821BE3E4F00ED317D /* jinher.app.SelfRectification */ = {
 			isa = PBXGroup;
 			children = (
+				84F16AE721C277C400664722 /* Views */,
+				84F16AD421C270DA00664722 /* images */,
 				8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */,
-				8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */,
 				8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */,
+				8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */,
 				8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */,
 				8416C81D21BE3E4F00ED317D /* Info.plist */,
 			);
 			path = jinher.app.SelfRectification;
+			sourceTree = "<group>";
+		};
+		84F16AD421C270DA00664722 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				84F16ADD21C2710200664722 /* pzxxxx.png */,
+				84F16AD621C2710200664722 /* pzxxxx@2x.png */,
+				84F16AD821C2710200664722 /* pzxxxx@3x.png */,
+				84F16ADC21C2710200664722 /* shengyinnn.png */,
+				84F16AD521C2710200664722 /* shengyinnn@2x.png */,
+				84F16ADB21C2710200664722 /* shengyinnn@3x.png */,
+				84F16AD721C2710200664722 /* zhzhaooo.png */,
+				84F16AD921C2710200664722 /* zhzhaooo@2x.png */,
+				84F16ADA21C2710200664722 /* zhzhaooo@3x.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		84F16AE721C277C400664722 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				84F16AE821C2782B00664722 /* RectiCollCell.h */,
+				84F16AE921C2782B00664722 /* RectiCollCell.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,6 +119,7 @@
 			files = (
 				8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */,
 				8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */,
+				84F16AEA21C2782B00664722 /* RectiCollCell.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -130,7 +180,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84F16AE021C2710200664722 /* zhzhaooo.png in Resources */,
+				84F16AE321C2710300664722 /* zhzhaooo@3x.png in Resources */,
+				84F16AE421C2710300664722 /* shengyinnn@3x.png in Resources */,
+				84F16AE521C2710300664722 /* shengyinnn.png in Resources */,
+				84F16AE121C2710200664722 /* pzxxxx@3x.png in Resources */,
 				8416C82121BE3E4F00ED317D /* SelfRectification.storyboard in Resources */,
+				84F16AE221C2710300664722 /* zhzhaooo@2x.png in Resources */,
+				84F16AE621C2710300664722 /* pzxxxx.png in Resources */,
+				84F16ADF21C2710200664722 /* pzxxxx@2x.png in Resources */,
+				84F16ADE21C2710200664722 /* shengyinnn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -142,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */,
+				84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
