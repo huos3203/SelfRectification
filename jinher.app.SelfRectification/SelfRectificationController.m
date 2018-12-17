@@ -10,7 +10,7 @@
 #import "RectiCollCell.h"
 //讯飞语音合成
 #import "iFlyMSClient.h"
-
+#import "SelfRectAlertView.h"
 @interface SelfRectificationController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UILabel *ibTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ibCurPageNumLabel;
@@ -21,6 +21,7 @@
 
 @property (strong, nonatomic) IBOutlet UIButton *ibThumImgButton;
 
+@property (strong, nonatomic) IBOutlet  SelfRectAlertView *ibAlertView;
 //data
 @property (strong, nonatomic) NSMutableArray *collDataArr;
 
@@ -39,8 +40,12 @@
     
     
     //UI
+    _ibAlertView.hidden = YES;
     _ibThumImgButton.layer.cornerRadius = 5;
     _ibThumImgButton.layer.masksToBounds = YES;
+    UICollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
+    // layout约束这边必须要用estimatedItemSize才能实现自适应,使用itemSzie无效
+    layout.estimatedItemSize = CGSizeMake(50, 30);
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -69,8 +74,13 @@
 
 - (IBAction)ibPaizhAction:(id)sender {
     
+    
 }
 - (IBAction)ibaPreviewAction:(id)sender {
+    
+}
+- (IBAction)ibaShowAlertViewAction:(id)sender {
+    [_ibAlertView setHidden:NO];
 }
 
 - (IBAction)ibaXunFAction:(id)sender {
