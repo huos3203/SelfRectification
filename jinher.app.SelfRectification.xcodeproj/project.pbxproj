@@ -7,10 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */; };
+		8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */; };
-		8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */; };
+		8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		8416C82121BE3E4F00ED317D /* SelfRectification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */; };
+		849A9B2A21C7410F0049DB89 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B2921C7410F0049DB89 /* iflyMSC.framework */; };
+		849A9B2D21C7466D0049DB89 /* iFlyMSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 849A9B2B21C7466D0049DB89 /* iFlyMSClient.h */; };
+		849A9B2E21C7466D0049DB89 /* iFlyMSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A9B2C21C7466D0049DB89 /* iFlyMSClient.m */; };
+		849A9B3D21C749DA0049DB89 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3C21C749DA0049DB89 /* libc++.tbd */; };
+		849A9B4321C74A690049DB89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3421C7499D0049DB89 /* SystemConfiguration.framework */; };
+		849A9B4421C74A7B0049DB89 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3021C7498D0049DB89 /* libz.tbd */; };
+		849A9B5521C759060049DB89 /* Definition.h in Headers */ = {isa = PBXBuildFile; fileRef = 849A9B5421C759060049DB89 /* Definition.h */; };
+		849A9B6021C761DD0049DB89 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3821C749B70049DB89 /* CoreTelephony.framework */; };
 		84F16ADE21C2710200664722 /* shengyinnn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD521C2710200664722 /* shengyinnn@2x.png */; };
 		84F16ADF21C2710200664722 /* pzxxxx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD621C2710200664722 /* pzxxxx@2x.png */; };
 		84F16AE021C2710200664722 /* zhzhaooo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD721C2710200664722 /* zhzhaooo.png */; };
@@ -31,6 +39,22 @@
 		8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfRectificationController.h; sourceTree = "<group>"; };
 		8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelfRectification.storyboard; sourceTree = "<group>"; };
 		8416C81D21BE3E4F00ED317D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		849A9B2621C73F180049DB89 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		849A9B2921C7410F0049DB89 /* iflyMSC.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = iflyMSC.framework; sourceTree = "<group>"; };
+		849A9B2B21C7466D0049DB89 /* iFlyMSClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iFlyMSClient.h; sourceTree = "<group>"; };
+		849A9B2C21C7466D0049DB89 /* iFlyMSClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iFlyMSClient.m; sourceTree = "<group>"; };
+		849A9B3021C7498D0049DB89 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		849A9B3221C749960049DB89 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		849A9B3421C7499D0049DB89 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		849A9B3621C749A90049DB89 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		849A9B3821C749B70049DB89 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		849A9B3A21C749C40049DB89 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		849A9B3C21C749DA0049DB89 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		849A9B5021C7586D0049DB89 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		849A9B5221C758810049DB89 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		849A9B5421C759060049DB89 /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
+		849A9B5B21C75BBB0049DB89 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		849A9B5D21C75C260049DB89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		84F16AD521C2710200664722 /* shengyinnn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shengyinnn@2x.png"; sourceTree = "<group>"; };
 		84F16AD621C2710200664722 /* pzxxxx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pzxxxx@2x.png"; sourceTree = "<group>"; };
 		84F16AD721C2710200664722 /* zhzhaooo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhzhaooo.png; sourceTree = "<group>"; };
@@ -49,6 +73,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				849A9B6021C761DD0049DB89 /* CoreTelephony.framework in Frameworks */,
+				849A9B4421C74A7B0049DB89 /* libz.tbd in Frameworks */,
+				849A9B4321C74A690049DB89 /* SystemConfiguration.framework in Frameworks */,
+				849A9B3D21C749DA0049DB89 /* libc++.tbd in Frameworks */,
+				849A9B2A21C7410F0049DB89 /* iflyMSC.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -60,6 +89,7 @@
 			children = (
 				8416C81821BE3E4F00ED317D /* jinher.app.SelfRectification */,
 				8416C80221BE3B9D00ED317D /* Products */,
+				849A9B2F21C7498D0049DB89 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +104,7 @@
 		8416C81821BE3E4F00ED317D /* jinher.app.SelfRectification */ = {
 			isa = PBXGroup;
 			children = (
+				849A9B2821C740B40049DB89 /* lib */,
 				84F16AE721C277C400664722 /* Views */,
 				84F16AD421C270DA00664722 /* images */,
 				8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */,
@@ -81,8 +112,38 @@
 				8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */,
 				8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */,
 				8416C81D21BE3E4F00ED317D /* Info.plist */,
+				849A9B2621C73F180049DB89 /* README.md */,
 			);
 			path = jinher.app.SelfRectification;
+			sourceTree = "<group>";
+		};
+		849A9B2821C740B40049DB89 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				849A9B5421C759060049DB89 /* Definition.h */,
+				849A9B2B21C7466D0049DB89 /* iFlyMSClient.h */,
+				849A9B2C21C7466D0049DB89 /* iFlyMSClient.m */,
+				849A9B2921C7410F0049DB89 /* iflyMSC.framework */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		849A9B2F21C7498D0049DB89 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				849A9B5D21C75C260049DB89 /* CoreLocation.framework */,
+				849A9B5B21C75BBB0049DB89 /* UIKit.framework */,
+				849A9B5221C758810049DB89 /* CoreGraphics.framework */,
+				849A9B5021C7586D0049DB89 /* QuartzCore.framework */,
+				849A9B3C21C749DA0049DB89 /* libc++.tbd */,
+				849A9B3A21C749C40049DB89 /* AudioToolbox.framework */,
+				849A9B3821C749B70049DB89 /* CoreTelephony.framework */,
+				849A9B3621C749A90049DB89 /* Foundation.framework */,
+				849A9B3421C7499D0049DB89 /* SystemConfiguration.framework */,
+				849A9B3221C749960049DB89 /* AVFoundation.framework */,
+				849A9B3021C7498D0049DB89 /* libz.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		84F16AD421C270DA00664722 /* images */ = {
@@ -119,7 +180,9 @@
 			files = (
 				8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */,
 				8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */,
+				849A9B5521C759060049DB89 /* Definition.h in Headers */,
 				84F16AEA21C2782B00664722 /* RectiCollCell.h in Headers */,
+				849A9B2D21C7466D0049DB89 /* iFlyMSClient.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,6 +264,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */,
+				849A9B2E21C7466D0049DB89 /* iFlyMSClient.m in Sources */,
 				84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,6 +400,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/jinher.app.SelfRectification/lib",
+				);
 				INFOPLIST_FILE = jinher.app.SelfRectification/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -360,6 +429,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/jinher.app.SelfRectification/lib",
+				);
 				INFOPLIST_FILE = jinher.app.SelfRectification/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -8,6 +8,9 @@
 
 #import "SelfRectificationController.h"
 #import "RectiCollCell.h"
+//讯飞语音合成
+#import "iFlyMSClient.h"
+
 @interface SelfRectificationController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UILabel *ibTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ibCurPageNumLabel;
@@ -70,7 +73,9 @@
 - (IBAction)ibaPreviewAction:(id)sender {
 }
 
-
+- (IBAction)ibaXunFAction:(id)sender {
+    [[iFlyMSClient shared] startSynContent:@"sfsfsf金和成功集成讯飞功能！！哈哈哈"];
+}
 
 
 #pragma mark set/get
