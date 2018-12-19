@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		26DA7C695182A04A6CAA9F04 /* Pods_jinher_app_SelfRectification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C73F8F8A3FD798F73E986 /* Pods_jinher_app_SelfRectification.framework */; };
+		840AB3DC21C9F68000213DAC /* RectiPreviewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 840AB3DA21C9F68000213DAC /* RectiPreviewCell.h */; };
+		840AB3DD21C9F68000213DAC /* RectiPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AB3DB21C9F68000213DAC /* RectiPreviewCell.m */; };
 		8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */; };
 		8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */; settings = {ATTRIBUTES = (Private, ); }; };
@@ -51,6 +53,8 @@
 /* Begin PBXFileReference section */
 		0F3C73F8F8A3FD798F73E986 /* Pods_jinher_app_SelfRectification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jinher_app_SelfRectification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		139F65B618AB55B02355E221 /* Pods-jinher.app.SelfRectification.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jinher.app.SelfRectification.debug.xcconfig"; path = "../../Pods/Target Support Files/Pods-jinher.app.SelfRectification/Pods-jinher.app.SelfRectification.debug.xcconfig"; sourceTree = "<group>"; };
+		840AB3DA21C9F68000213DAC /* RectiPreviewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RectiPreviewCell.h; sourceTree = "<group>"; };
+		840AB3DB21C9F68000213DAC /* RectiPreviewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RectiPreviewCell.m; sourceTree = "<group>"; };
 		8416C80121BE3B9D00ED317D /* jinher_app_SelfRectification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = jinher_app_SelfRectification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jinher_app_SelfRectification.h; sourceTree = "<group>"; };
 		8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelfRectificationController.m; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 				84F16AE921C2782B00664722 /* RectiCollCell.m */,
 				8422F8A221C7781C00C57421 /* SelfRectAlertView.h */,
 				8422F8A321C7781C00C57421 /* SelfRectAlertView.m */,
+				840AB3DA21C9F68000213DAC /* RectiPreviewCell.h */,
+				840AB3DB21C9F68000213DAC /* RectiPreviewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -262,6 +268,7 @@
 				849A9B5521C759060049DB89 /* Definition.h in Headers */,
 				84F16AEA21C2782B00664722 /* RectiCollCell.h in Headers */,
 				842EF98621C7C6B300448AF0 /* UIBezierPath+TextPaths.h in Headers */,
+				840AB3DC21C9F68000213DAC /* RectiPreviewCell.h in Headers */,
 				849A9B2D21C7466D0049DB89 /* iFlyMSClient.h in Headers */,
 				842EF98321C7C6B300448AF0 /* ARCGPathFromString.h in Headers */,
 			);
@@ -383,6 +390,7 @@
 				842EF98521C7C6B300448AF0 /* ARCGPathFromString.m in Sources */,
 				849A9B2E21C7466D0049DB89 /* iFlyMSClient.m in Sources */,
 				84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */,
+				840AB3DD21C9F68000213DAC /* RectiPreviewCell.m in Sources */,
 				848F409D21C7B5DF00800F59 /* SelfRectPreViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
