@@ -9,8 +9,16 @@
 #import "SelfRectificationController.h"
 #import "RectiCollCell.h"
 //讯飞语音合成
-#import "iFlyMSClient.h"
+#ifdef iSmallApp
+//#import "iFlyMSClient.h"
+#else
+#import "XunFeiLibrary.h"
+#endif
+
+#import "XunFeiLibrary.h"
 #import "SelfRectAlertView.h"
+#import "SevenImgCapture.h"
+
 @interface SelfRectificationController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UILabel *ibTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *ibCurPageNumLabel;
@@ -73,7 +81,18 @@
 #pragma mark action
 
 - (IBAction)ibPaizhAction:(id)sender {
-    
+    [SevenImgCapture shared].address;
+    [[SevenImgCapture shared] waterMarkFor:self.view];
+    __weak typeof(self) weakSelf = self;
+    [SevenImgCapture shared].complexMethod = ComplexMethodLeftRight;
+    [SevenImgCapture shared].captureTmoutS = 10;
+    [[SevenImgCapture shared] captureImage:^(UIImage *image) {
+        if (image) {
+            [[SevenImgCapture shared] threeInfo];
+            image = [[SevenImgCapture shared] complexText];
+//            weakSelf.fiveWatermarkView.uploadFiveImgBlock(image);
+        }
+    }];
     
 }
 - (IBAction)ibaPreviewAction:(id)sender {
@@ -84,7 +103,11 @@
 }
 
 - (IBAction)ibaXunFAction:(id)sender {
-    [[iFlyMSClient shared] startSynContent:@"sfsfsf金和成功集成讯飞功能！！哈哈哈"];
+#ifdef iSmallApp
+//    [[iFlyMSClient shared] startSynContent:@"金和成功集成讯飞功能！！哈哈哈"];
+#else
+    [[XunFeiLibrary shareXunFei] playWithContent:@"金和成功集成讯飞功能！！哈哈哈" WithWebView:nil];
+#endif
 }
 
 

@@ -7,8 +7,12 @@
 //
 
 #import "RectiPreviewCell.h"
-#import <SDWebImage/UIImageView+WebCache.h>
-
+#ifdef iSmallApp
+//#import <SDWebImage/UIImageView+WebCache.h>
+#else
+#import "UIImageView+WebCache.h"
+#endif
+#import "UIImageView+WebCache.h"
 @interface RectiPreviewCell()
 
 @property (strong, nonatomic) IBOutlet UILabel  *ibTitleLabel;

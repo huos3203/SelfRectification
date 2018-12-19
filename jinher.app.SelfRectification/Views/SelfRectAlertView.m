@@ -7,8 +7,12 @@
 //
 
 #import "SelfRectAlertView.h"
-#import <SDWebImage/UIImageView+WebCache.h>
-
+#ifdef iSmallApp
+//    #import <SDWebImage/UIImageView+WebCache.h>
+#else
+    #import "UIImageView+WebCache.h"
+#endif
+#import "UIImageView+WebCache.h"
 @interface SelfRectAlertView()
 
 @property (strong, nonatomic) IBOutlet UIView *ibAlertView;
