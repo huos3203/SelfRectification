@@ -23,7 +23,44 @@
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fni-ec-bnW">
                                         <rect key="frame" x="0.0" y="102" width="375" height="390"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qcs-Qw-zdi" userLabel="五定图片" customClass="FiveWatermarkView">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="244" verticalHuggingPriority="245" horizontalCompressionResistancePriority="746" verticalCompressionResistancePriority="747" translatesAutoresizingMaskIntoConstraints="NO" id="ksu-dE-1Ce">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="390"/>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tCe-eY-xUU" customClass="HSProgressPopUpView">
+                                                        <rect key="frame" x="0.0" y="389.5" width="375" height="0.5"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="0.5" id="Ipw-kR-MHt"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="tCe-eY-xUU" firstAttribute="leading" secondItem="Qcs-Qw-zdi" secondAttribute="leading" id="Rdl-sj-cAO"/>
+                                                    <constraint firstItem="ksu-dE-1Ce" firstAttribute="leading" secondItem="Qcs-Qw-zdi" secondAttribute="leading" id="XLQ-n8-rGG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="tCe-eY-xUU" secondAttribute="bottom" id="aLZ-wL-afr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ksu-dE-1Ce" secondAttribute="trailing" id="iOw-n6-a01"/>
+                                                    <constraint firstAttribute="trailing" secondItem="tCe-eY-xUU" secondAttribute="trailing" id="kjF-V6-U88"/>
+                                                    <constraint firstItem="ksu-dE-1Ce" firstAttribute="top" secondItem="Qcs-Qw-zdi" secondAttribute="top" id="v60-SY-Rh2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="ksu-dE-1Ce" secondAttribute="bottom" id="vhK-id-gTC"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outlet property="ibFiveImgView" destination="ksu-dE-1Ce" id="FbU-Ar-Koz"/>
+                                                    <outlet property="ibProgressView" destination="tCe-eY-xUU" id="CIk-bQ-UDD"/>
+                                                </connections>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Qcs-Qw-zdi" firstAttribute="leading" secondItem="Fni-ec-bnW" secondAttribute="leading" id="EUP-Zu-LG6"/>
+                                            <constraint firstItem="Qcs-Qw-zdi" firstAttribute="top" secondItem="Fni-ec-bnW" secondAttribute="top" id="Q1X-Yi-AAo"/>
+                                            <constraint firstAttribute="trailing" secondItem="Qcs-Qw-zdi" secondAttribute="trailing" id="a7F-3f-pTn"/>
+                                            <constraint firstAttribute="bottom" secondItem="Qcs-Qw-zdi" secondAttribute="bottom" id="aGU-XH-DNn"/>
+                                        </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手部清洁" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YR7-FR-Omm">
                                         <rect key="frame" x="150.5" y="30" width="74" height="22"/>
@@ -60,7 +97,7 @@
                                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         </collectionViewFlowLayout>
                                         <cells>
-                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RectiCollCell" id="0pu-xK-uaS" customClass="RectiCollCell">
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="center" reuseIdentifier="RectiCollCell" id="0pu-xK-uaS" customClass="RectiCollCell">
                                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -115,7 +152,6 @@
                                         </constraints>
                                         <state key="normal" image="pzxxxx.png"/>
                                         <connections>
-                                            <action selector="ibPaizhAction:" destination="6Gt-cq-Cc0" eventType="touchUpInside" id="325-9T-23o"/>
                                             <action selector="ibaPreviewAction:" destination="6Gt-cq-Cc0" eventType="touchUpInside" id="dYo-XG-ae9"/>
                                             <segue destination="TRo-d0-3Ky" kind="show" id="NqP-bi-28c"/>
                                         </connections>
@@ -145,7 +181,7 @@
                                                             <action selector="ibaCloseAction:" destination="qkW-aV-h4B" eventType="touchUpInside" id="MjG-IB-yzk"/>
                                                         </connections>
                                                     </button>
-                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="230" verticalHuggingPriority="230" horizontalCompressionResistancePriority="730" verticalCompressionResistancePriority="730" editable="NO" text="从业人员需穿戴清洁的工作衣帽、保持双手 清洁、注意个人卫生" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qc-sW-6eV">
+                                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="230" verticalHuggingPriority="230" horizontalCompressionResistancePriority="730" verticalCompressionResistancePriority="730" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="从业人员需穿戴清洁的工作衣帽、保持双手 清洁、注意个人卫生" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qc-sW-6eV">
                                                         <rect key="frame" x="10" y="211" width="275" height="80"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
@@ -229,8 +265,8 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="collectionView" destination="rVQ-PN-zlL" id="Je0-fW-9W6"/>
+                        <outlet property="fiveWatermarkView" destination="Qcs-Qw-zdi" id="tpE-hq-c6I"/>
                         <outlet property="ibAlertView" destination="qkW-aV-h4B" id="is2-d5-TzM"/>
-                        <outlet property="ibContentView" destination="Fni-ec-bnW" id="adr-V2-h21"/>
                         <outlet property="ibCurPageNumLabel" destination="iqI-2g-mgv" id="fN1-ns-11l"/>
                         <outlet property="ibThumImgButton" destination="snQ-ij-aA4" id="5No-7Y-ORs"/>
                         <outlet property="ibTitleLabel" destination="YR7-FR-Omm" id="11G-ib-t34"/>

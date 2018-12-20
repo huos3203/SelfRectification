@@ -9,15 +9,12 @@
 #import "SelfRectificationController.h"
 #import "RectiCollCell.h"
 //讯飞语音合成
-#ifdef iSmallApp
-//#import "iFlyMSClient.h"
-#else
-#import "XunFeiLibrary.h"
-#endif
-
 #import "XunFeiLibrary.h"
 #import "SelfRectAlertView.h"
 #import "SevenImgCapture.h"
+#import "UIImageView+WebCache.h"
+#import "MBProgressHUD.h"
+#import "FiveWatermarkView.h"
 
 @interface SelfRectificationController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UILabel *ibTitleLabel;
@@ -25,7 +22,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *ibXunFeiButton;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 //
-@property (strong, nonatomic) IBOutlet UIView *ibContentView;
+@property (strong, nonatomic) IBOutlet FiveWatermarkView *fiveWatermarkView;
 
 @property (strong, nonatomic) IBOutlet UIButton *ibThumImgButton;
 
@@ -40,13 +37,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    for (int i = 0; i < 10; i++) {
-        RectCollModel *model = [RectCollModel new];
-        model.title = [NSString stringWithFormat:@"left%d",i];
-        [self.collDataArr addObject:model];
-    }
-    
-    
     //UI
     _ibAlertView.hidden = YES;
     _ibThumImgButton.layer.cornerRadius = 5;
@@ -54,6 +44,11 @@
     UICollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
     // layout约束这边必须要用estimatedItemSize才能实现自适应,使用itemSzie无效
     layout.estimatedItemSize = CGSizeMake(50, 30);
+    _fiveWatermarkView.layer.cornerRadius = 0;
+    _fiveWatermarkView.alpha = 1;
+    
+    //data
+    [self loadData];
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
@@ -76,21 +71,75 @@
 //
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",indexPath.row + 1,self.collDataArr.count];
+    ///更新遮罩蒙板
+    [[UIImageView new] setImageWithURL:[NSURL URLWithString:@"https://huosan.gitee.io/img/random/material-1.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+            [[SevenImgCapture shared] setMaskImage:image];
+        }];
+    }];
+}
+
+#pragma mark loaddata
+-(void)loadData{
+    for (int i = 0; i < 4; i++) {
+        RectCollModel *model = [RectCollModel new];
+        model.title = [NSString stringWithFormat:@"left%d",i];
+        [self.collDataArr addObject:model];
+    }
+    ///请求数据
+    {
+        [_fiveWatermarkView.ibFiveImgView sd_setImageWithURL:[NSURL URLWithString:@"https://huosan.gitee.io/img/random/material-1.png"]];
+        [self nextOptItem];
+    }
     
 }
+#pragma mark UI
+-(void)nextOptItem
+{
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
+        if (self.collectionView.indexPathsForSelectedItems.count > 0) {
+            NSIndexPath *curIndexPath = self.collectionView.indexPathsForSelectedItems[0];
+            indexPath = [NSIndexPath indexPathForItem:curIndexPath.row + 1 inSection:0];
+        }
+
+        self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",indexPath.row+1,self.collDataArr.count];
+        [self.collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    }];
+}
+
 #pragma mark action
 
 - (IBAction)ibPaizhAction:(id)sender {
-    [SevenImgCapture shared].address;
-    [[SevenImgCapture shared] waterMarkFor:self.view];
+    
+//    [[SevenImgCapture shared] waterMarkFor:self.view];
     __weak typeof(self) weakSelf = self;
-    [SevenImgCapture shared].complexMethod = ComplexMethodLeftRight;
+    ///拍照
+    [SevenImgCapture shared].address;
+    [SevenImgCapture shared].complexMethod = ComplexMethodLowerRight;
     [SevenImgCapture shared].captureTmoutS = 10;
+    [[SevenImgCapture shared] setNoHoldImageView];
+    [[SevenImgCapture shared] setCaptureImageView:_fiveWatermarkView.ibFiveImgView];
     [[SevenImgCapture shared] captureImage:^(UIImage *image) {
         if (image) {
             [[SevenImgCapture shared] threeInfo];
             image = [[SevenImgCapture shared] complexText];
-//            weakSelf.fiveWatermarkView.uploadFiveImgBlock(image);
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [MBProgressHUD showHUDText:@"正在处理五定图片..." animated:YES];
+//                [weakSelf.fiveWatermarkView.ibFiveImgView setImage:image];
+                [_fiveWatermarkView.ibFiveImgView sd_setImageWithURL:nil placeholderImage:image];
+            }];
+            weakSelf.fiveWatermarkView.uploadFinishBlock = ^(NSString *url) {
+                [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                    [MBProgressHUD hideHUDanimated:YES];
+                    //上传图片完成之后，更新title
+                    [weakSelf nextOptItem];
+                }];
+                ///TODO: 上传完成路径
+                NSLog(@"图片路径：%@",url);
+            };
+            weakSelf.fiveWatermarkView.uploadFiveImgBlock(image);
         }
     }];
     
@@ -103,11 +152,7 @@
 }
 
 - (IBAction)ibaXunFAction:(id)sender {
-#ifdef iSmallApp
-//    [[iFlyMSClient shared] startSynContent:@"金和成功集成讯飞功能！！哈哈哈"];
-#else
     [[XunFeiLibrary shareXunFei] playWithContent:@"金和成功集成讯飞功能！！哈哈哈" WithWebView:nil];
-#endif
 }
 
 
