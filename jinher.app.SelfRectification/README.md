@@ -17,3 +17,11 @@ appid是第三方应用集成讯飞开放平台SDK的身份标识，SDK静态库
 NSString *initString = [[NSString alloc] initWithFormat:@"appid=%@", @"YourAppid"];
 [IFlySpeechUtility createUtility:initString];
 ```
+
+### API
+1. 检查项列表
+http://192.168.9.158:81/web/#/12?page_id=87
+2. 自检项提交图片接口
+http://192.168.9.158:81/web/#/12?page_id=89
+3. 自检分类点击已完成，预览接口
+http://192.168.9.158:81/web/#/12?page_id=90
