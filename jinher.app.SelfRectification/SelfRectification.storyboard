@@ -377,7 +377,7 @@
                         <viewLayoutGuide key="safeArea" id="Sgj-ku-dph"/>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="Chw-Vj-cqC" id="bds-u7-fqf"/>
+                        <outlet property="collectionView" destination="Chw-Vj-cqC" id="P7B-B8-XoK"/>
                         <outlet property="ibBackBut" destination="13m-EX-Uuk" id="T8h-aD-fi1"/>
                     </connections>
                 </viewController>

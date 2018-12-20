@@ -44,9 +44,15 @@
     UICollectionViewFlowLayout *layout = self.collectionView.collectionViewLayout;
     // layout约束这边必须要用estimatedItemSize才能实现自适应,使用itemSzie无效
     layout.estimatedItemSize = CGSizeMake(50, 30);
+    
+    //拍照
     _fiveWatermarkView.layer.cornerRadius = 0;
     _fiveWatermarkView.alpha = 1;
-    
+    [SevenImgCapture shared].address;
+    [SevenImgCapture shared].complexMethod = ComplexMethodLowerRight;
+    [SevenImgCapture shared].captureTmoutS = 1;
+    [[SevenImgCapture shared] setNoHoldImageView];
+    [[SevenImgCapture shared] setCaptureImageView:_fiveWatermarkView.ibFiveImgView];
     //data
     [self loadData];
 }
@@ -71,13 +77,7 @@
 //
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",indexPath.row + 1,self.collDataArr.count];
-    ///更新遮罩蒙板
-    [[UIImageView new] setImageWithURL:[NSURL URLWithString:@"https://huosan.gitee.io/img/random/material-1.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            [[SevenImgCapture shared] setMaskImage:image];
-        }];
-    }];
+    
 }
 
 #pragma mark loaddata
@@ -102,11 +102,21 @@
         if (self.collectionView.indexPathsForSelectedItems.count > 0) {
             NSIndexPath *curIndexPath = self.collectionView.indexPathsForSelectedItems[0];
             indexPath = [NSIndexPath indexPathForItem:curIndexPath.row + 1 inSection:0];
+            //    _fiveWatermarkView.ibFiveImgView.image = [[SevenImgCapture shared] getCaptureImageView].image;
         }
-
-        self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",indexPath.row+1,self.collDataArr.count];
-        [self.collectionView selectItemAtIndexPath:indexPath animated:YES scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+        self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",indexPath.row + 1,self.collDataArr.count];
+        ///更新遮罩蒙板
+//        [[UIImageView new] setImageWithURL:[NSURL URLWithString:@"https://huosan.gitee.io/img/random/material-1.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+//                [[SevenImgCapture shared] setMaskImage:image];
+//            }];
+//        }];
+        [[SevenImgCapture shared] setMaskImage:[UIImage new]];
+        [self.collectionView selectItemAtIndexPath:indexPath
+                                          animated:YES
+                                    scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }];
+    
 }
 
 #pragma mark action
@@ -115,24 +125,20 @@
     
 //    [[SevenImgCapture shared] waterMarkFor:self.view];
     __weak typeof(self) weakSelf = self;
-    ///拍照
-    [SevenImgCapture shared].address;
-    [SevenImgCapture shared].complexMethod = ComplexMethodLowerRight;
-    [SevenImgCapture shared].captureTmoutS = 10;
-    [[SevenImgCapture shared] setNoHoldImageView];
-    [[SevenImgCapture shared] setCaptureImageView:_fiveWatermarkView.ibFiveImgView];
+    [weakSelf.ibAlertView showAlertView:NO];
     [[SevenImgCapture shared] captureImage:^(UIImage *image) {
         if (image) {
             [[SevenImgCapture shared] threeInfo];
             image = [[SevenImgCapture shared] complexText];
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [MBProgressHUD showHUDText:@"正在处理五定图片..." animated:YES];
-//                [weakSelf.fiveWatermarkView.ibFiveImgView setImage:image];
-                [_fiveWatermarkView.ibFiveImgView sd_setImageWithURL:nil placeholderImage:image];
+                [weakSelf.fiveWatermarkView.ibFiveImgView setImage:image];
+//                [_fiveWatermarkView.ibFiveImgView sd_setImageWithURL:nil placeholderImage:image];
             }];
             weakSelf.fiveWatermarkView.uploadFinishBlock = ^(NSString *url) {
                 [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                     [MBProgressHUD hideHUDanimated:YES];
+                    [weakSelf.ibAlertView setHidden:YES];
                     //上传图片完成之后，更新title
                     [weakSelf nextOptItem];
                 }];
@@ -148,7 +154,7 @@
     
 }
 - (IBAction)ibaShowAlertViewAction:(id)sender {
-    [_ibAlertView setHidden:NO];
+    [_ibAlertView showAlertView:YES];
 }
 
 - (IBAction)ibaXunFAction:(id)sender {

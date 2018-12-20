@@ -40,6 +40,16 @@
 - (IBAction)ibaCloseAction:(id)sender {
     [self setHidden:YES];
 }
-
+-(void)showAlertView:(BOOL)isShow
+{
+    if (isShow) {
+        //显示提示框
+        [_ibAlertView setHidden:NO];
+    }else{
+        /// 仅显示遮罩
+         [_ibAlertView setHidden:YES];
+    }
+    [self setHidden:NO];
+}
 
 @end

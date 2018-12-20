@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 @interface SelfRectAlertView : UIView
-
+-(void)showAlertView:(BOOL)isShow;
 @end
 

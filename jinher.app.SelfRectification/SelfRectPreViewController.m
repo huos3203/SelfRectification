@@ -7,7 +7,6 @@
 //
 
 #import "SelfRectPreViewController.h"
-#import "UIBezierPath+TextPaths.h"
 #import "RectiPreviewCell.h"
 
 @interface SelfRectPreViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
