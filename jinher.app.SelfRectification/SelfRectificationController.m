@@ -16,6 +16,9 @@
 #import "UIImageView+WebCache.h"
 #import "MBProgressHUD.h"
 #import "FiveWatermarkView.h"
+#import "ReqRectifServer.h"
+#import "MBProgressHUD.h"
+#import "AddRectTask.h"
 
 @interface SelfRectificationController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (strong, nonatomic) IBOutlet UILabel *ibTitleLabel;
@@ -30,6 +33,7 @@
 @property (strong, nonatomic) IBOutlet  SelfRectAlertView *ibAlertView;
 @property (strong, nonatomic) NSArray<ComInspectOptionGuide *> *optGuide;
 @property (strong, nonatomic) ComInspectOption *curTaskOpt;
+@property (strong, nonatomic) AddRectTask *addRectTask;
 @end
 
 @implementation SelfRectificationController
@@ -40,7 +44,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //UI
-    _ibTitleLabel.text = _task.ClassificationName;
     _ibAlertView.hidden = YES;
     _ibThumImgButton.layer.cornerRadius = 5;
     _ibThumImgButton.layer.masksToBounds = YES;
@@ -86,10 +89,7 @@
 #pragma mark loaddata
 -(void)loadData{
     ///请求数据
-    {
-        [_fiveWatermarkView.ibFiveImgView sd_setImageWithURL:[NSURL URLWithString:@"https://huosan.gitee.io/img/random/material-1.png"]];
-        [self nextOptItem];
-    }
+    [self nextOptGuideItem];
     
 }
 #pragma mark UI
@@ -108,13 +108,16 @@
                 indexPath = [NSIndexPath indexPathForItem:curIndexPath.row + 1 inSection:0];
             }
         }
+         self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",indexPath.row + 1,self.optGuide.count];
         ComInspectOptionGuide *model = self.optGuide[indexPath.row];
+        [self->_fiveWatermarkView.ibFiveImgView sd_setImageWithURL:[NSURL URLWithString:model.Picture]];
         ///更新遮罩蒙板
         [[UIImageView new] setImageWithURL:[NSURL URLWithString:model.Picture] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
             [[NSOperationQueue mainQueue] addOperationWithBlock:^{
                 [[SevenImgCapture shared] setMaskImage:image];
             }];
         }];
+        [self.collectionView reloadData];
         [self.collectionView selectItemAtIndexPath:indexPath
                                           animated:YES
                                     scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
@@ -122,12 +125,39 @@
 }
 -(void)nextOptItem
 {
-    _curOptIndex++;
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",self->_curOptIndex,self.task.ComInspectOptionList.count];
-        [self.collectionView reloadData];
+        [MBProgressHUD showHUDText:@"正在完成..." animated:YES];
+        //TODO: 判断图片是否全部上传成功
+        BOOL isAllUpload = false;
+        for (RectOptPics *optPic in self.addRectTask.option.OptionPicsList) {
+            if (optPic.PictureSrc.length == 0) {
+                isAllUpload = NO;
+                break;
+            }
+            isAllUpload = YES;
+        }
+        if (!isAllUpload) {
+            [MBProgressHUD hideHUDanimated:YES];
+            MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:self.navigationController.view animated:YES];
+            hud.mode = MBProgressHUDModeText;
+            hud.label.text = @"部分图片上传失败！";
+            [hud hide:YES afterDelay:1.f];
+            return;
+        }
+        [self.addRectTask.optionTaskIds addObject:@""];
+        self.addRectTask.option.InspectOptionId = self->_curTaskOpt.InspectOptionId;
+        self.addRectTask.option.ClassificationId = self->_curTaskOpt.ClassificationId;
+        
+        [[ReqRectifServer shared] reqAddRectTask:self.addRectTask handler:^(BOOL result) {
+            //
+            [MBProgressHUD hideHUDanimated:YES];
+            if (result) {
+                self->_curTaskOpt.IsCompleted = YES;
+                [self.collectionView reloadData];
+                [self nextOptGuideItem];
+            }
+        }];
     }];
-    
 }
 
 #pragma mark action
@@ -135,6 +165,11 @@
 - (IBAction)ibPaizhAction:(id)sender {
     
 //    [[SevenImgCapture shared] waterMarkFor:self.view];
+    RectOptPics *pic = [RectOptPics new];
+    pic.Order = @"dfd";
+    pic.InspectOptionGuideId = @"";
+    [self.addRectTask.option.OptionPicsList addObject:pic];
+    
     __weak typeof(self) weakSelf = self;
     [weakSelf.ibAlertView showAlertView:NO];
     [[SevenImgCapture shared] captureImage:^(UIImage *image) {
@@ -166,7 +201,6 @@
 }
 - (IBAction)ibaShowAlertViewAction:(id)sender {
     [_ibAlertView showAlertView:YES];
-//    -(void)showAlertTitle:(NSString *)title msg:(NSString *)msg imgUrl:(NSString *)url
     [_ibAlertView showAlertTitle:self.curTaskOpt.Text msg:self.curTaskOpt.Remark imgUrl:self.curTaskOpt.Picture];
 }
 
@@ -179,7 +213,17 @@
 
 -(ComInspectOption *)curTaskOpt
 {
-    _curTaskOpt = _task.ComInspectOptionList[_curOptIndex];
+//    NSPredicate *pre = [NSPredicate predicateWithFormat:@"IsCompleted = 0  AND ComInspectOptionGuideList != nil"];
+//    NSArray *array = [_task.ComInspectOptionList filteredArrayUsingPredicate:pre];
+//    _curTaskOpt = array[0];
+    for (ComInspectOption *opt in _task.ComInspectOptionList) {
+        if (opt.IsCompleted) continue;
+        if (opt.ComInspectOptionGuideList.count > 0) {
+            _curTaskOpt = opt;
+            _ibTitleLabel.text = _curTaskOpt.Text;
+            break;
+        }
+    }
     return _curTaskOpt;
 }
 -(NSArray<ComInspectOptionGuide *> *)optGuide
@@ -188,4 +232,11 @@
     return _optGuide;
 }
 
+-(AddRectTask *)addRectTask
+{
+    if (!_addRectTask) {
+        _addRectTask = [AddRectTask new];
+    }
+    return _addRectTask;
+}
 @end
