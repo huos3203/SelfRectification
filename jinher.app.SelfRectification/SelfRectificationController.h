@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class RectifTask;
 @interface SelfRectificationController : UIViewController
-
+@property (strong, nonatomic) RectifTask *task;
 @end

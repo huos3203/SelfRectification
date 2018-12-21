@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 @interface SelfRectAlertView : UIView
+-(void)showAlertTitle:(NSString *)title msg:(NSString *)msg imgUrl:(NSString *)url;
 -(void)showAlertView:(BOOL)isShow;
 @end
 

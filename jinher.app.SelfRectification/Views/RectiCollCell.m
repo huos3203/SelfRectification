@@ -7,20 +7,18 @@
 //
 
 #import "RectiCollCell.h"
-
-@implementation RectCollModel
-
-@end
+#import "RectifTaskList.h"
 
 @interface RectiCollCell()
 @property (strong, nonatomic) IBOutlet UILabel *ibRectTitleLabel;
 
 @end
 @implementation RectiCollCell
--(void)setModel:(RectCollModel *)model
+
+-(void)setModel:(ComInspectOptionGuide *)model
 {
     _model = model;
-    _ibRectTitleLabel.text = model.title;
+    _ibRectTitleLabel.text = model.Text;
 }
 
 - (void)setSelected:(BOOL)selected

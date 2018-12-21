@@ -7,11 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface RectCollModel:NSObject
-@property (strong, nonatomic) NSString *title;
-@end
-
+@class ComInspectOptionGuide;
 @interface RectiCollCell : UICollectionViewCell
-@property (strong, nonatomic) RectCollModel *model;
+@property (strong, nonatomic) ComInspectOptionGuide *model;
 @end
 

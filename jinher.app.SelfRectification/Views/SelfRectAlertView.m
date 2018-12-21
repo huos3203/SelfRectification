@@ -31,9 +31,6 @@
     _ibAlertView.layer.cornerRadius = 8;
     _ibImgView.layer.cornerRadius = 8;
     _ibImgView.layer.masksToBounds = true;
-    NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    NSString *url = @"http://192.168.1.44/assets/brand_logo-c37eb221b456bb4b472cc1084480991f.png";
-    [_ibImgView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"example@3x" inBundle:bundle compatibleWithTraitCollection:nil]];
 }
 
 ///隐藏
@@ -52,4 +49,11 @@
     [self setHidden:NO];
 }
 
+-(void)showAlertTitle:(NSString *)title msg:(NSString *)msg imgUrl:(NSString *)url
+{
+    _ibTitleLabel.text = title;
+    _ibTextView.text = msg;
+    NSBundle *bundle = [NSBundle bundleForClass:self.class];
+    [_ibImgView sd_setImageWithURL:[NSURL URLWithString:url] placeholderImage:[UIImage imageNamed:@"example@3x" inBundle:bundle compatibleWithTraitCollection:nil]];
+}
 @end

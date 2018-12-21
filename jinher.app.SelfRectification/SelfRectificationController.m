@@ -8,6 +8,7 @@
 
 #import "SelfRectificationController.h"
 #import "RectiCollCell.h"
+#import "RectifTaskList.h"
 //讯飞语音合成
 #import "XunFeiLibrary.h"
 #import "SelfRectAlertView.h"
@@ -27,17 +28,19 @@
 @property (strong, nonatomic) IBOutlet UIButton *ibThumImgButton;
 
 @property (strong, nonatomic) IBOutlet  SelfRectAlertView *ibAlertView;
-//data
-@property (strong, nonatomic) NSMutableArray *collDataArr;
-
+@property (strong, nonatomic) NSArray<ComInspectOptionGuide *> *optGuide;
+@property (strong, nonatomic) ComInspectOption *curTaskOpt;
 @end
 
 @implementation SelfRectificationController
-
+{
+    NSInteger _curOptIndex;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //UI
+    _ibTitleLabel.text = _task.ClassificationName;
     _ibAlertView.hidden = YES;
     _ibThumImgButton.layer.cornerRadius = 5;
     _ibThumImgButton.layer.masksToBounds = YES;
@@ -63,13 +66,13 @@
 }
 -(NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return self.collDataArr.count;
+    return self.optGuide.count;
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
     RectiCollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RectiCollCell" forIndexPath:indexPath];
-    RectCollModel *model = self.collDataArr[indexPath.row];
+    ComInspectOptionGuide *model = self.optGuide[indexPath.row];
     cell.model = model;
     return cell;
 }
@@ -82,11 +85,6 @@
 
 #pragma mark loaddata
 -(void)loadData{
-    for (int i = 0; i < 4; i++) {
-        RectCollModel *model = [RectCollModel new];
-        model.title = [NSString stringWithFormat:@"left%d",i];
-        [self.collDataArr addObject:model];
-    }
     ///请求数据
     {
         [_fiveWatermarkView.ibFiveImgView sd_setImageWithURL:[NSURL URLWithString:@"https://huosan.gitee.io/img/random/material-1.png"]];
@@ -95,26 +93,39 @@
     
 }
 #pragma mark UI
--(void)nextOptItem
+-(void)nextOptGuideItem
 {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        ///
         NSIndexPath *indexPath = [NSIndexPath indexPathForItem:0 inSection:0];
         if (self.collectionView.indexPathsForSelectedItems.count > 0) {
             NSIndexPath *curIndexPath = self.collectionView.indexPathsForSelectedItems[0];
-            indexPath = [NSIndexPath indexPathForItem:curIndexPath.row + 1 inSection:0];
-            //    _fiveWatermarkView.ibFiveImgView.image = [[SevenImgCapture shared] getCaptureImageView].image;
+            ///完成最后一个
+            if (indexPath.row + 1 == self.optGuide.count) {
+                [self nextOptItem];
+                return;
+            }else{
+                indexPath = [NSIndexPath indexPathForItem:curIndexPath.row + 1 inSection:0];
+            }
         }
-        self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",indexPath.row + 1,self.collDataArr.count];
+        ComInspectOptionGuide *model = self.optGuide[indexPath.row];
         ///更新遮罩蒙板
-//        [[UIImageView new] setImageWithURL:[NSURL URLWithString:@"https://huosan.gitee.io/img/random/material-1.png"] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
-//            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-//                [[SevenImgCapture shared] setMaskImage:image];
-//            }];
-//        }];
-        [[SevenImgCapture shared] setMaskImage:[UIImage new]];
+        [[UIImageView new] setImageWithURL:[NSURL URLWithString:model.Picture] completed:^(UIImage *image, NSError *error, SDImageCacheType cacheType) {
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                [[SevenImgCapture shared] setMaskImage:image];
+            }];
+        }];
         [self.collectionView selectItemAtIndexPath:indexPath
                                           animated:YES
                                     scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
+    }];
+}
+-(void)nextOptItem
+{
+    _curOptIndex++;
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.ibCurPageNumLabel.text = [NSString stringWithFormat:@"(%ld/%ld)",self->_curOptIndex,self.task.ComInspectOptionList.count];
+        [self.collectionView reloadData];
     }];
     
 }
@@ -140,7 +151,7 @@
                     [MBProgressHUD hideHUDanimated:YES];
                     [weakSelf.ibAlertView setHidden:YES];
                     //上传图片完成之后，更新title
-                    [weakSelf nextOptItem];
+                    [weakSelf nextOptGuideItem];
                 }];
                 ///TODO: 上传完成路径
                 NSLog(@"图片路径：%@",url);
@@ -155,20 +166,26 @@
 }
 - (IBAction)ibaShowAlertViewAction:(id)sender {
     [_ibAlertView showAlertView:YES];
+//    -(void)showAlertTitle:(NSString *)title msg:(NSString *)msg imgUrl:(NSString *)url
+    [_ibAlertView showAlertTitle:self.curTaskOpt.Text msg:self.curTaskOpt.Remark imgUrl:self.curTaskOpt.Picture];
 }
 
 - (IBAction)ibaXunFAction:(id)sender {
-    [[XunFeiLibrary shareXunFei] playWithContent:@"金和成功集成讯飞功能！！哈哈哈" WithWebView:nil];
+    [[XunFeiLibrary shareXunFei] playWithContent:self.curTaskOpt.Remark WithWebView:nil];
+}
+- (IBAction)ibaBackAction:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
-
-#pragma mark set/get
--(NSMutableArray *)collDataArr
+-(ComInspectOption *)curTaskOpt
 {
-    if (!_collDataArr) {
-        _collDataArr = [NSMutableArray new];
-    }
-    return _collDataArr;
+    _curTaskOpt = _task.ComInspectOptionList[_curOptIndex];
+    return _curTaskOpt;
+}
+-(NSArray<ComInspectOptionGuide *> *)optGuide
+{
+    _optGuide = self.curTaskOpt.ComInspectOptionGuideList;
+    return _optGuide;
 }
 
 @end
