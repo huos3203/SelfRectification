@@ -24,6 +24,10 @@
 		842EF98421C7C6B300448AF0 /* UIBezierPath+TextPaths.m in Sources */ = {isa = PBXBuildFile; fileRef = 842EF98021C7C6B300448AF0 /* UIBezierPath+TextPaths.m */; };
 		842EF98521C7C6B300448AF0 /* ARCGPathFromString.m in Sources */ = {isa = PBXBuildFile; fileRef = 842EF98121C7C6B300448AF0 /* ARCGPathFromString.m */; };
 		842EF98621C7C6B300448AF0 /* UIBezierPath+TextPaths.h in Headers */ = {isa = PBXBuildFile; fileRef = 842EF98221C7C6B300448AF0 /* UIBezierPath+TextPaths.h */; };
+		843ADCA621CD41610081C377 /* JHAutomaticCapture.mm in Sources */ = {isa = PBXBuildFile; fileRef = 843ADCA221CD415E0081C377 /* JHAutomaticCapture.mm */; };
+		843ADCA721CD41610081C377 /* JHIdentifyCapture.m in Sources */ = {isa = PBXBuildFile; fileRef = 843ADCA321CD41600081C377 /* JHIdentifyCapture.m */; };
+		843ADCA821CD41610081C377 /* JHAutomaticCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 843ADCA421CD41600081C377 /* JHAutomaticCapture.h */; };
+		843ADCA921CD41610081C377 /* JHIdentifyCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 843ADCA521CD41600081C377 /* JHIdentifyCapture.h */; };
 		848F3F1421C7A08400800F59 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F3F1121C7A08300800F59 /* back.png */; };
 		848F3F1521C7A08400800F59 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F3F1221C7A08300800F59 /* back@2x.png */; };
 		848F3F1621C7A08400800F59 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F3F1321C7A08300800F59 /* back@3x.png */; };
@@ -71,6 +75,10 @@
 		842EF98021C7C6B300448AF0 /* UIBezierPath+TextPaths.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+TextPaths.m"; sourceTree = "<group>"; };
 		842EF98121C7C6B300448AF0 /* ARCGPathFromString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCGPathFromString.m; sourceTree = "<group>"; };
 		842EF98221C7C6B300448AF0 /* UIBezierPath+TextPaths.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+TextPaths.h"; sourceTree = "<group>"; };
+		843ADCA221CD415E0081C377 /* JHAutomaticCapture.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JHAutomaticCapture.mm; sourceTree = "<group>"; };
+		843ADCA321CD41600081C377 /* JHIdentifyCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHIdentifyCapture.m; sourceTree = "<group>"; };
+		843ADCA421CD41600081C377 /* JHAutomaticCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAutomaticCapture.h; sourceTree = "<group>"; };
+		843ADCA521CD41600081C377 /* JHIdentifyCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHIdentifyCapture.h; sourceTree = "<group>"; };
 		848F3F1121C7A08300800F59 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
 		848F3F1221C7A08300800F59 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		848F3F1321C7A08300800F59 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
@@ -191,6 +199,10 @@
 		849A9B2821C740B40049DB89 /* lib */ = {
 			isa = PBXGroup;
 			children = (
+				843ADCA421CD41600081C377 /* JHAutomaticCapture.h */,
+				843ADCA221CD415E0081C377 /* JHAutomaticCapture.mm */,
+				843ADCA521CD41600081C377 /* JHIdentifyCapture.h */,
+				843ADCA321CD41600081C377 /* JHIdentifyCapture.m */,
 				849A9B5421C759060049DB89 /* Definition.h */,
 				849A9B2B21C7466D0049DB89 /* iFlyMSClient.h */,
 				849A9B2C21C7466D0049DB89 /* iFlyMSClient.m */,
@@ -263,6 +275,7 @@
 			files = (
 				8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */,
 				848F409C21C7B5DF00800F59 /* SelfRectPreViewController.h in Headers */,
+				843ADCA821CD41610081C377 /* JHAutomaticCapture.h in Headers */,
 				8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */,
 				8422F8A421C7781C00C57421 /* SelfRectAlertView.h in Headers */,
 				849A9B5521C759060049DB89 /* Definition.h in Headers */,
@@ -271,6 +284,7 @@
 				840AB3DC21C9F68000213DAC /* RectiPreviewCell.h in Headers */,
 				849A9B2D21C7466D0049DB89 /* iFlyMSClient.h in Headers */,
 				842EF98321C7C6B300448AF0 /* ARCGPathFromString.h in Headers */,
+				843ADCA921CD41610081C377 /* JHIdentifyCapture.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,8 +401,10 @@
 				8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */,
 				842EF98421C7C6B300448AF0 /* UIBezierPath+TextPaths.m in Sources */,
 				8422F8A521C7781C00C57421 /* SelfRectAlertView.m in Sources */,
+				843ADCA621CD41610081C377 /* JHAutomaticCapture.mm in Sources */,
 				842EF98521C7C6B300448AF0 /* ARCGPathFromString.m in Sources */,
 				849A9B2E21C7466D0049DB89 /* iFlyMSClient.m in Sources */,
+				843ADCA721CD41610081C377 /* JHIdentifyCapture.m in Sources */,
 				84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */,
 				840AB3DD21C9F68000213DAC /* RectiPreviewCell.m in Sources */,
 				848F409D21C7B5DF00800F59 /* SelfRectPreViewController.m in Sources */,
