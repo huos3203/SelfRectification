@@ -10,4 +10,5 @@
 
 @interface SelfRectPreViewController : UIViewController
 
+@property (strong, nonatomic) NSMutableArray *collDataArr;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "RectiPreviewCell.h"
+#import "ArchiveCameraModel.h"
 #ifdef iSmallApp
 //#import <SDWebImage/UIImageView+WebCache.h>
 #else
@@ -40,7 +41,7 @@
     _model = model;
     _ibTitleLabel.text = model.title;
     _ibContentLabel.text = model.content;
-    [_ibImgView sd_setImageWithURL:[NSURL URLWithString:model.imgURL]];
+    [_ibImgView sd_setImageWithURL:[NSURL URLWithString:model.url]];
 }
 
 @end

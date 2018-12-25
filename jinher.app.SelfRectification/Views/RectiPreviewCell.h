@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface RectiPreModel : NSObject
+#import "ArchiveCameraModel.h"
+//@class ArchiveCameraModel;
+@interface RectiPreModel : ArchiveCameraModel
+@property (strong, nonatomic) NSString *guideId;
+@property (strong, nonatomic) NSString *optId;
+@property (assign, nonatomic) NSInteger order;
 @property (strong, nonatomic) NSString *title;
-@property (strong, nonatomic) NSString *imgURL;
 @property (strong, nonatomic) NSString *content;
 @end
 
