@@ -40,7 +40,7 @@
     for (int i = 1; i < 10; i++) {
         RectiPreModel *model = [RectiPreModel new];
         model.title = [NSString stringWithFormat:@"test %d",i];
-        model.imgURL = [NSString stringWithFormat:@"https://huosan.gitee.io/img/random/material-%d.png",i];
+        model.imgURL = [NSString stringWithFormat:@"https://iTBoyer.gitee.io/img/random/material-%d.png",i];
         [self.collDataArr addObject:model];
     }
     
