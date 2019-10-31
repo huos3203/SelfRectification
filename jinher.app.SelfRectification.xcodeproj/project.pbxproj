@@ -7,17 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		26DA7C695182A04A6CAA9F04 /* Pods_jinher_app_SelfRectification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C73F8F8A3FD798F73E986 /* Pods_jinher_app_SelfRectification.framework */; };
 		840AB3DC21C9F68000213DAC /* RectiPreviewCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 840AB3DA21C9F68000213DAC /* RectiPreviewCell.h */; };
 		840AB3DD21C9F68000213DAC /* RectiPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 840AB3DB21C9F68000213DAC /* RectiPreviewCell.m */; };
 		8416C81E21BE3E4F00ED317D /* jinher_app_SelfRectification.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8416C81F21BE3E4F00ED317D /* SelfRectificationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */; };
-		8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		8416C82021BE3E4F00ED317D /* SelfRectificationController.h in Headers */ = {isa = PBXBuildFile; fileRef = 8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */; };
 		8416C82121BE3E4F00ED317D /* SelfRectification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */; };
-		8422F89D21C7767400C57421 /* alertclose.png in Resources */ = {isa = PBXBuildFile; fileRef = 8422F89A21C7767300C57421 /* alertclose.png */; };
-		8422F89E21C7767400C57421 /* alertclose@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8422F89B21C7767400C57421 /* alertclose@2x.png */; };
-		8422F89F21C7767400C57421 /* alertclose@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8422F89C21C7767400C57421 /* alertclose@3x.png */; };
-		8422F8A121C776C000C57421 /* example@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8422F8A021C776C000C57421 /* example@3x.png */; };
 		8422F8A421C7781C00C57421 /* SelfRectAlertView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8422F8A221C7781C00C57421 /* SelfRectAlertView.h */; };
 		8422F8A521C7781C00C57421 /* SelfRectAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8422F8A321C7781C00C57421 /* SelfRectAlertView.m */; };
 		842EF98321C7C6B300448AF0 /* ARCGPathFromString.h in Headers */ = {isa = PBXBuildFile; fileRef = 842EF97F21C7C6B300448AF0 /* ARCGPathFromString.h */; };
@@ -26,9 +21,9 @@
 		842EF98621C7C6B300448AF0 /* UIBezierPath+TextPaths.h in Headers */ = {isa = PBXBuildFile; fileRef = 842EF98221C7C6B300448AF0 /* UIBezierPath+TextPaths.h */; };
 		843ADCA821CD41610081C377 /* JHAutomaticCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 843ADCA421CD41600081C377 /* JHAutomaticCapture.h */; };
 		843ADCA921CD41610081C377 /* JHIdentifyCapture.h in Headers */ = {isa = PBXBuildFile; fileRef = 843ADCA521CD41600081C377 /* JHIdentifyCapture.h */; };
-		848F3F1421C7A08400800F59 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F3F1121C7A08300800F59 /* back.png */; };
-		848F3F1521C7A08400800F59 /* back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F3F1221C7A08300800F59 /* back@2x.png */; };
-		848F3F1621C7A08400800F59 /* back@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 848F3F1321C7A08300800F59 /* back@3x.png */; };
+		8456D15A236AC8C80049E86D /* images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8456D159236AC8C80049E86D /* images.xcassets */; };
+		846F0BE0236AA42B009024C1 /* Pods_jinher_app_SelfRectification.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C73F8F8A3FD798F73E986 /* Pods_jinher_app_SelfRectification.framework */; };
+		846F0BE1236AA42B009024C1 /* Pods_jinher_app_SelfRectification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C73F8F8A3FD798F73E986 /* Pods_jinher_app_SelfRectification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		848F409C21C7B5DF00800F59 /* SelfRectPreViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 848F409A21C7B5DF00800F59 /* SelfRectPreViewController.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		848F409D21C7B5DF00800F59 /* SelfRectPreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F409B21C7B5DF00800F59 /* SelfRectPreViewController.m */; };
 		849A9B2A21C7410F0049DB89 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B2921C7410F0049DB89 /* iflyMSC.framework */; };
@@ -39,18 +34,23 @@
 		849A9B4421C74A7B0049DB89 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3021C7498D0049DB89 /* libz.tbd */; };
 		849A9B5521C759060049DB89 /* Definition.h in Headers */ = {isa = PBXBuildFile; fileRef = 849A9B5421C759060049DB89 /* Definition.h */; };
 		849A9B6021C761DD0049DB89 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3821C749B70049DB89 /* CoreTelephony.framework */; };
-		84F16ADE21C2710200664722 /* shengyinnn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD521C2710200664722 /* shengyinnn@2x.png */; };
-		84F16ADF21C2710200664722 /* pzxxxx@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD621C2710200664722 /* pzxxxx@2x.png */; };
-		84F16AE021C2710200664722 /* zhzhaooo.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD721C2710200664722 /* zhzhaooo.png */; };
-		84F16AE121C2710200664722 /* pzxxxx@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD821C2710200664722 /* pzxxxx@3x.png */; };
-		84F16AE221C2710300664722 /* zhzhaooo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16AD921C2710200664722 /* zhzhaooo@2x.png */; };
-		84F16AE321C2710300664722 /* zhzhaooo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16ADA21C2710200664722 /* zhzhaooo@3x.png */; };
-		84F16AE421C2710300664722 /* shengyinnn@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16ADB21C2710200664722 /* shengyinnn@3x.png */; };
-		84F16AE521C2710300664722 /* shengyinnn.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16ADC21C2710200664722 /* shengyinnn.png */; };
-		84F16AE621C2710300664722 /* pzxxxx.png in Resources */ = {isa = PBXBuildFile; fileRef = 84F16ADD21C2710200664722 /* pzxxxx.png */; };
 		84F16AEA21C2782B00664722 /* RectiCollCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F16AE821C2782B00664722 /* RectiCollCell.h */; };
 		84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F16AE921C2782B00664722 /* RectiCollCell.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		846F0BE2236AA42B009024C1 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				846F0BE1236AA42B009024C1 /* Pods_jinher_app_SelfRectification.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0F3C73F8F8A3FD798F73E986 /* Pods_jinher_app_SelfRectification.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jinher_app_SelfRectification.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,10 +63,6 @@
 		8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelfRectificationController.h; sourceTree = "<group>"; };
 		8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SelfRectification.storyboard; sourceTree = "<group>"; };
 		8416C81D21BE3E4F00ED317D /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8422F89A21C7767300C57421 /* alertclose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = alertclose.png; sourceTree = "<group>"; };
-		8422F89B21C7767400C57421 /* alertclose@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alertclose@2x.png"; sourceTree = "<group>"; };
-		8422F89C21C7767400C57421 /* alertclose@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "alertclose@3x.png"; sourceTree = "<group>"; };
-		8422F8A021C776C000C57421 /* example@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "example@3x.png"; sourceTree = "<group>"; };
 		8422F8A221C7781C00C57421 /* SelfRectAlertView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfRectAlertView.h; sourceTree = "<group>"; };
 		8422F8A321C7781C00C57421 /* SelfRectAlertView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfRectAlertView.m; sourceTree = "<group>"; };
 		842EF97F21C7C6B300448AF0 /* ARCGPathFromString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCGPathFromString.h; sourceTree = "<group>"; };
@@ -77,9 +73,7 @@
 		843ADCA321CD41600081C377 /* JHIdentifyCapture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JHIdentifyCapture.m; sourceTree = "<group>"; };
 		843ADCA421CD41600081C377 /* JHAutomaticCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHAutomaticCapture.h; sourceTree = "<group>"; };
 		843ADCA521CD41600081C377 /* JHIdentifyCapture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JHIdentifyCapture.h; sourceTree = "<group>"; };
-		848F3F1121C7A08300800F59 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back.png; sourceTree = "<group>"; };
-		848F3F1221C7A08300800F59 /* back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
-		848F3F1321C7A08300800F59 /* back@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		8456D159236AC8C80049E86D /* images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = images.xcassets; sourceTree = "<group>"; };
 		848F409A21C7B5DF00800F59 /* SelfRectPreViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SelfRectPreViewController.h; sourceTree = "<group>"; };
 		848F409B21C7B5DF00800F59 /* SelfRectPreViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SelfRectPreViewController.m; sourceTree = "<group>"; };
 		849A9B2621C73F180049DB89 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -98,15 +92,6 @@
 		849A9B5421C759060049DB89 /* Definition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Definition.h; sourceTree = "<group>"; };
 		849A9B5B21C75BBB0049DB89 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		849A9B5D21C75C260049DB89 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		84F16AD521C2710200664722 /* shengyinnn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shengyinnn@2x.png"; sourceTree = "<group>"; };
-		84F16AD621C2710200664722 /* pzxxxx@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pzxxxx@2x.png"; sourceTree = "<group>"; };
-		84F16AD721C2710200664722 /* zhzhaooo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zhzhaooo.png; sourceTree = "<group>"; };
-		84F16AD821C2710200664722 /* pzxxxx@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pzxxxx@3x.png"; sourceTree = "<group>"; };
-		84F16AD921C2710200664722 /* zhzhaooo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhzhaooo@2x.png"; sourceTree = "<group>"; };
-		84F16ADA21C2710200664722 /* zhzhaooo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zhzhaooo@3x.png"; sourceTree = "<group>"; };
-		84F16ADB21C2710200664722 /* shengyinnn@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shengyinnn@3x.png"; sourceTree = "<group>"; };
-		84F16ADC21C2710200664722 /* shengyinnn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shengyinnn.png; sourceTree = "<group>"; };
-		84F16ADD21C2710200664722 /* pzxxxx.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pzxxxx.png; sourceTree = "<group>"; };
 		84F16AE821C2782B00664722 /* RectiCollCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RectiCollCell.h; sourceTree = "<group>"; };
 		84F16AE921C2782B00664722 /* RectiCollCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RectiCollCell.m; sourceTree = "<group>"; };
 		CE13A3E24DC32A73E7E3B717 /* Pods-jinher.app.SelfRectification.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jinher.app.SelfRectification.release.xcconfig"; path = "../../Pods/Target Support Files/Pods-jinher.app.SelfRectification/Pods-jinher.app.SelfRectification.release.xcconfig"; sourceTree = "<group>"; };
@@ -122,7 +107,7 @@
 				849A9B4321C74A690049DB89 /* SystemConfiguration.framework in Frameworks */,
 				849A9B3D21C749DA0049DB89 /* libc++.tbd in Frameworks */,
 				849A9B2A21C7410F0049DB89 /* iflyMSC.framework in Frameworks */,
-				26DA7C695182A04A6CAA9F04 /* Pods_jinher_app_SelfRectification.framework in Frameworks */,
+				846F0BE0236AA42B009024C1 /* Pods_jinher_app_SelfRectification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,7 +147,6 @@
 				842EF97D21C7C6A300448AF0 /* Utils */,
 				849A9B2821C740B40049DB89 /* lib */,
 				84F16AE721C277C400664722 /* Views */,
-				84F16AD421C270DA00664722 /* images */,
 				8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */,
 				8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */,
 				8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */,
@@ -171,6 +155,7 @@
 				8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */,
 				8416C81D21BE3E4F00ED317D /* Info.plist */,
 				849A9B2621C73F180049DB89 /* README.md */,
+				8456D159236AC8C80049E86D /* images.xcassets */,
 			);
 			path = jinher.app.SelfRectification;
 			sourceTree = "<group>";
@@ -228,29 +213,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		84F16AD421C270DA00664722 /* images */ = {
-			isa = PBXGroup;
-			children = (
-				848F3F1121C7A08300800F59 /* back.png */,
-				848F3F1221C7A08300800F59 /* back@2x.png */,
-				848F3F1321C7A08300800F59 /* back@3x.png */,
-				8422F8A021C776C000C57421 /* example@3x.png */,
-				8422F89A21C7767300C57421 /* alertclose.png */,
-				8422F89B21C7767400C57421 /* alertclose@2x.png */,
-				8422F89C21C7767400C57421 /* alertclose@3x.png */,
-				84F16ADD21C2710200664722 /* pzxxxx.png */,
-				84F16AD621C2710200664722 /* pzxxxx@2x.png */,
-				84F16AD821C2710200664722 /* pzxxxx@3x.png */,
-				84F16ADC21C2710200664722 /* shengyinnn.png */,
-				84F16AD521C2710200664722 /* shengyinnn@2x.png */,
-				84F16ADB21C2710200664722 /* shengyinnn@3x.png */,
-				84F16AD721C2710200664722 /* zhzhaooo.png */,
-				84F16AD921C2710200664722 /* zhzhaooo@2x.png */,
-				84F16ADA21C2710200664722 /* zhzhaooo@3x.png */,
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		84F16AE721C277C400664722 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -298,6 +260,7 @@
 				8416C7FD21BE3B9D00ED317D /* Sources */,
 				8416C7FE21BE3B9D00ED317D /* Frameworks */,
 				8416C7FF21BE3B9D00ED317D /* Resources */,
+				846F0BE2236AA42B009024C1 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -344,23 +307,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8422F89E21C7767400C57421 /* alertclose@2x.png in Resources */,
-				84F16AE021C2710200664722 /* zhzhaooo.png in Resources */,
-				848F3F1621C7A08400800F59 /* back@3x.png in Resources */,
-				84F16AE321C2710300664722 /* zhzhaooo@3x.png in Resources */,
-				8422F89D21C7767400C57421 /* alertclose.png in Resources */,
-				84F16AE421C2710300664722 /* shengyinnn@3x.png in Resources */,
-				84F16AE521C2710300664722 /* shengyinnn.png in Resources */,
-				8422F8A121C776C000C57421 /* example@3x.png in Resources */,
-				84F16AE121C2710200664722 /* pzxxxx@3x.png in Resources */,
-				8422F89F21C7767400C57421 /* alertclose@3x.png in Resources */,
-				848F3F1521C7A08400800F59 /* back@2x.png in Resources */,
+				8456D15A236AC8C80049E86D /* images.xcassets in Resources */,
 				8416C82121BE3E4F00ED317D /* SelfRectification.storyboard in Resources */,
-				84F16AE221C2710300664722 /* zhzhaooo@2x.png in Resources */,
-				848F3F1421C7A08400800F59 /* back.png in Resources */,
-				84F16AE621C2710300664722 /* pzxxxx.png in Resources */,
-				84F16ADF21C2710200664722 /* pzxxxx@2x.png in Resources */,
-				84F16ADE21C2710200664722 /* shengyinnn@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -539,6 +487,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -550,6 +499,23 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"FontAwesomeKit\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JSONModel\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"YxmGCD\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jinher.app.SelfRectification;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -569,6 +535,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				EMBED_ASSET_PACKS_IN_PRODUCT_BUNDLE = NO;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -580,6 +547,23 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"FontAwesomeKit\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"JSONModel\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"YxmGCD\"",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = jinher.app.SelfRectification;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
