@@ -26,7 +26,6 @@
 		846F0BE1236AA42B009024C1 /* Pods_jinher_app_SelfRectification.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0F3C73F8F8A3FD798F73E986 /* Pods_jinher_app_SelfRectification.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		848F409C21C7B5DF00800F59 /* SelfRectPreViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 848F409A21C7B5DF00800F59 /* SelfRectPreViewController.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		848F409D21C7B5DF00800F59 /* SelfRectPreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F409B21C7B5DF00800F59 /* SelfRectPreViewController.m */; };
-		849A9B2A21C7410F0049DB89 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B2921C7410F0049DB89 /* iflyMSC.framework */; };
 		849A9B2D21C7466D0049DB89 /* iFlyMSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 849A9B2B21C7466D0049DB89 /* iFlyMSClient.h */; };
 		849A9B2E21C7466D0049DB89 /* iFlyMSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A9B2C21C7466D0049DB89 /* iFlyMSClient.m */; };
 		849A9B3D21C749DA0049DB89 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3C21C749DA0049DB89 /* libc++.tbd */; };
@@ -36,6 +35,7 @@
 		849A9B6021C761DD0049DB89 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3821C749B70049DB89 /* CoreTelephony.framework */; };
 		84F16AEA21C2782B00664722 /* RectiCollCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F16AE821C2782B00664722 /* RectiCollCell.h */; };
 		84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F16AE921C2782B00664722 /* RectiCollCell.m */; };
+		F92156392418D21100674E61 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B2921C7410F0049DB89 /* iflyMSC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,11 +102,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F92156392418D21100674E61 /* iflyMSC.framework in Frameworks */,
 				849A9B6021C761DD0049DB89 /* CoreTelephony.framework in Frameworks */,
 				849A9B4421C74A7B0049DB89 /* libz.tbd in Frameworks */,
 				849A9B4321C74A690049DB89 /* SystemConfiguration.framework in Frameworks */,
 				849A9B3D21C749DA0049DB89 /* libc++.tbd in Frameworks */,
-				849A9B2A21C7410F0049DB89 /* iflyMSC.framework in Frameworks */,
 				846F0BE0236AA42B009024C1 /* Pods_jinher_app_SelfRectification.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
