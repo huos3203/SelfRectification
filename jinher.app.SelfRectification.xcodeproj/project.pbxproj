@@ -27,7 +27,6 @@
 		848F409C21C7B5DF00800F59 /* SelfRectPreViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 848F409A21C7B5DF00800F59 /* SelfRectPreViewController.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		848F409D21C7B5DF00800F59 /* SelfRectPreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 848F409B21C7B5DF00800F59 /* SelfRectPreViewController.m */; };
 		849A9B2D21C7466D0049DB89 /* iFlyMSClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 849A9B2B21C7466D0049DB89 /* iFlyMSClient.h */; };
-		849A9B2E21C7466D0049DB89 /* iFlyMSClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 849A9B2C21C7466D0049DB89 /* iFlyMSClient.m */; };
 		849A9B3D21C749DA0049DB89 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3C21C749DA0049DB89 /* libc++.tbd */; };
 		849A9B4321C74A690049DB89 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3421C7499D0049DB89 /* SystemConfiguration.framework */; };
 		849A9B4421C74A7B0049DB89 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3021C7498D0049DB89 /* libz.tbd */; };
@@ -35,7 +34,6 @@
 		849A9B6021C761DD0049DB89 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B3821C749B70049DB89 /* CoreTelephony.framework */; };
 		84F16AEA21C2782B00664722 /* RectiCollCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F16AE821C2782B00664722 /* RectiCollCell.h */; };
 		84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F16AE921C2782B00664722 /* RectiCollCell.m */; };
-		F92156392418D21100674E61 /* iflyMSC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849A9B2921C7410F0049DB89 /* iflyMSC.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -102,7 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F92156392418D21100674E61 /* iflyMSC.framework in Frameworks */,
 				849A9B6021C761DD0049DB89 /* CoreTelephony.framework in Frameworks */,
 				849A9B4421C74A7B0049DB89 /* libz.tbd in Frameworks */,
 				849A9B4321C74A690049DB89 /* SystemConfiguration.framework in Frameworks */,
@@ -144,18 +141,18 @@
 		8416C81821BE3E4F00ED317D /* jinher.app.SelfRectification */ = {
 			isa = PBXGroup;
 			children = (
-				842EF97D21C7C6A300448AF0 /* Utils */,
-				849A9B2821C740B40049DB89 /* lib */,
-				84F16AE721C277C400664722 /* Views */,
+				8456D159236AC8C80049E86D /* images.xcassets */,
+				8416C81D21BE3E4F00ED317D /* Info.plist */,
 				8416C81921BE3E4F00ED317D /* jinher_app_SelfRectification.h */,
+				849A9B2821C740B40049DB89 /* lib */,
+				849A9B2621C73F180049DB89 /* README.md */,
+				8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */,
 				8416C81B21BE3E4F00ED317D /* SelfRectificationController.h */,
 				8416C81A21BE3E4F00ED317D /* SelfRectificationController.m */,
 				848F409A21C7B5DF00800F59 /* SelfRectPreViewController.h */,
 				848F409B21C7B5DF00800F59 /* SelfRectPreViewController.m */,
-				8416C81C21BE3E4F00ED317D /* SelfRectification.storyboard */,
-				8416C81D21BE3E4F00ED317D /* Info.plist */,
-				849A9B2621C73F180049DB89 /* README.md */,
-				8456D159236AC8C80049E86D /* images.xcassets */,
+				842EF97D21C7C6A300448AF0 /* Utils */,
+				84F16AE721C277C400664722 /* Views */,
 			);
 			path = jinher.app.SelfRectification;
 			sourceTree = "<group>";
@@ -348,7 +345,6 @@
 				842EF98421C7C6B300448AF0 /* UIBezierPath+TextPaths.m in Sources */,
 				8422F8A521C7781C00C57421 /* SelfRectAlertView.m in Sources */,
 				842EF98521C7C6B300448AF0 /* ARCGPathFromString.m in Sources */,
-				849A9B2E21C7466D0049DB89 /* iFlyMSClient.m in Sources */,
 				84F16AEB21C2782B00664722 /* RectiCollCell.m in Sources */,
 				840AB3DD21C9F68000213DAC /* RectiPreviewCell.m in Sources */,
 				848F409D21C7B5DF00800F59 /* SelfRectPreViewController.m in Sources */,

@@ -8,7 +8,7 @@
 
 #import "iFlyMSClient.h"
 //讯飞语音合成
-#import "iflyMSC/IFlyMSC.h"
+//#import "iflyMSC/IFlyMSC.h"
 #import "Definition.h"
 
 @interface iFlyMSClient()<IFlySpeechSynthesizerDelegate>
